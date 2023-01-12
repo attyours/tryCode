@@ -3,31 +3,45 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/mainTheme"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/bg">
+
     <TextView
         android:id="@+id/appName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="12dp"
-        android:includeFontPadding="false"
-        android:text="@string/a2_notes"
-        android:fontFamily="@font/ubuntu_bold"
-        android:textSize="30sp"
-        android:textColor="@color/white"
+        android:textSize="@dimen/_20ssp"
+        android:text="@string/notes"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingTop="@dimen/_10sdp"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/white"
+        android:fontFamily="@font/manrope_bold"
         />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_20ssp"
+        android:text="A2"
+        tools:layout_editor_absoluteX="336dp"
+        tools:layout_editor_absoluteY="23dp"
+        android:paddingStart="@dimen/_270sdp"
+        android:paddingTop="@dimen/_10sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/white"
+        android:fontFamily="@font/cinzel_bold"/>
     <LinearLayout
         android:id="@+id/layoutSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="12dp"
-        android:background="@drawable/boxer"
-        android:backgroundTint="@color/search"
+        android:background="@drawable/background"
+        android:backgroundTint="@color/bg_2"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="20dp"
         android:gravity="center_vertical"
@@ -41,25 +55,25 @@
             android:layout_marginStart="10dp"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            app:tint="@color/icons"
+            app:tint="@color/whitee"
             android:src="@drawable/ic_search"
             android:contentDescription="@string/app_name"/>
         <EditText
             android:id="@+id/inputSearch"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="40dp"
             android:layout_marginStart="10dp"
             android:background="@null"
             android:hint="@string/search_notes"
             android:includeFontPadding="false"
             android:autofillHints="@null"
-            android:fontFamily="@font/ubuntu_medium"
+            android:fontFamily="@font/manrope_regular"
             android:inputType="text"
-            android:textColorHint="@color/textHint"
+            android:textColorHint="@color/whitee"
             android:textSize="15sp"
             android:focusable="true"
             android:focusableInTouchMode="true"
-
+            android:textColor="@color/whitee"
             />
     </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
@@ -80,22 +94,30 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingTop="0dp"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="@dimen/_13sdp"
+        android:background="@color/bg_2"
+        >
     </LinearLayout>
 
-    <ImageView
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/imageAddNoteMain"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="25dp"
-        android:background="@drawable/backround_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:backgroundTint="@color/bgfab"
         android:src="@drawable/ic_add"
-        app:tint="@color/white"
-        android:layout_marginBottom="20dp"
-        android:contentDescription="@string/app_name"
-        app:layout_constraintBottom_toTopOf="@id/baseline"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        android:tint="@color/primarydark"
+        app:backgroundTint="@color/bgfab"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

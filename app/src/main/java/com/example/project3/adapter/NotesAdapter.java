@@ -1,4 +1,4 @@
-package adapter;
+package com.example.project3.adapter;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,21 +9,20 @@ import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.project3.MainActivity;
 import com.example.project3.R;
 import com.example.project3.UpdateActivity;
 import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Timer;
 
 import db.DbHelper;
 import model.Notes;
@@ -32,6 +31,8 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
     private ArrayList<Notes> notesArrayList= new ArrayList<>();
     private Activity activity;
     private DbHelper dbHelper;
+    private Timer timer;
+    private List<Notes> notesSource;
     LinearLayout layoutNote;
 
     public NotesAdapter(Activity activity){
@@ -108,7 +109,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
             if(notes.getColor()!=null){
                 gradientDrawable.setColor(Color.parseColor(notes.getColor()));
             }else{
-                gradientDrawable.setColor(Color.parseColor("4C4C4C"));
+                gradientDrawable.setColor(Color.parseColor("#80171C26"));
             }
         }
     }

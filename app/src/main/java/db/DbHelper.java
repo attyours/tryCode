@@ -6,7 +6,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.net.Uri;
 
+import java.io.File;
 import java.util.ArrayList;
 
 import model.Notes;
@@ -25,13 +27,13 @@ public class DbHelper extends SQLiteOpenHelper {
 
     private static final String CREATE_TABLE_NOTES =
             "CREATE TABLE "+ TABLE_NAME + "("
-            + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + KEY_TITLE + " TEXT,"
-            + KEY_SUBTITLE + " TEXT,"
-            + KEY_IMAGE + " BLOB,"
-            + KEY_DATE + " TEXT,"
-            + KEY_TEXTS + " TEXT,"
-            + KEY_COLORS + " TEXT);";
+                    + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                    + KEY_TITLE + " TEXT,"
+                    + KEY_SUBTITLE + " TEXT,"
+                    + KEY_IMAGE + " BLOB,"
+                    + KEY_DATE + " TEXT,"
+                    + KEY_TEXTS + " TEXT,"
+                    + KEY_COLORS + " TEXT);";
 
 
     public DbHelper(Context context){super(context,DB_NAME,null,DB_VERSION);}
@@ -109,12 +111,32 @@ public class DbHelper extends SQLiteOpenHelper {
         return notesArrayList;
     }
     //  Delete data from database
-    public void deleteNotes(){}
+
+    public void deleteNotes(int id, Uri uri){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        if (uri != null){
+            String path = uri.getEncodedPath();
+            File file = new File(path);
+            if (file.exists()){
+                file.delete();
+            }
+        }
+        sqLiteDatabase.delete(TABLE_NAME, KEY_ID + "=?", new String[]{String.valueOf(id)});
+    }
 
     //   Update data from database
-    public int updateNotes(int id, String title, String subtitle,String date,String text){
+    public int updateNotes(int id, String title, String subtitle,byte[] image,String date,String text, String color){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
 
-        return id;
+        values.put(KEY_TITLE,title);
+        values.put(KEY_SUBTITLE,subtitle);
+        values.put(KEY_IMAGE,image);
+        values.put(KEY_DATE,date);
+        values.put(KEY_TEXTS,text);
+        values.put(KEY_COLORS,color);
+
+        return sqLiteDatabase.update(TABLE_NAME,values,KEY_ID + "=?", new String[]{String.valueOf(id)});
     }
 
 }

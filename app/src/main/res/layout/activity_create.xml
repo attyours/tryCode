@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/mainTheme"
+    android:background="@color/bgmain"
     tools:context=".CreateActivity">
     <ScrollView
         android:id="@+id/scrollView"
@@ -29,8 +29,23 @@
                 android:src="@drawable/ic_back"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/icon" />
+                app:tint="@color/miscBackground" />
 
+            <ImageView
+                android:id="@+id/imageDelete"
+                android:layout_width="53dp"
+                android:layout_height="58dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginEnd="50dp"
+                android:background="@drawable/background_delete_button"
+                android:contentDescription="@string/app_name"
+                android:padding="@dimen/_10sdp"
+                android:src="@drawable/ic_delete"
+                app:layout_constraintBottom_toBottomOf="@id/imageBack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageBack"
+                app:layout_constraintVertical_bias="0.312"
+                app:tint="@color/miscBackground" />
             <ImageView
                 android:id="@+id/imageSave"
                 android:layout_width="40dp"
@@ -44,8 +59,7 @@
                 app:layout_constraintBottom_toBottomOf="@id/imageBack"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/imageBack"
-                app:tint="@color/icon" />
-
+                app:tint="@color/miscBackground" />
 
 
             <EditText
@@ -56,14 +70,14 @@
                 android:layout_marginLeft="@dimen/_28sdp"
                 android:layout_marginRight="@dimen/_80sdp"
                 android:background="@null"
-                android:fontFamily="@font/ubuntu_bold"
+                android:fontFamily="@font/manrope_ex"
                 android:hint="Title"
                 android:imeOptions="actionDone"
                 android:importantForAutofill="no"
                 android:includeFontPadding="false"
                 android:inputType="text"
-                android:textColor="@color/white"
-                android:textColorHint="@color/icon"
+                android:textColor="@color/bgmis"
+                android:textColorHint="@color/icons"
                 android:textSize="@dimen/_16ssp"
                 app:layout_constraintBottom_toBottomOf="@id/imageBack"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -72,9 +86,9 @@
                 android:id="@+id/textDateTime"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/ubuntu_regular"
+                android:fontFamily="@font/manrope_regular"
                 android:includeFontPadding="false"
-                android:textColor="@color/icon"
+                android:textColor="@color/icons"
                 android:textSize="@dimen/_10ssp"
                 app:layout_constraintEnd_toEndOf="@+id/inputNoteTitle"
                 app:layout_constraintStart_toStartOf="@id/inputNoteTitle"
@@ -89,13 +103,13 @@
                 android:layout_marginTop="@dimen/_8sdp"
                 android:layout_marginEnd="@dimen/_12sdp"
                 android:background="@null"
-                android:fontFamily="@font/ubuntu_medium"
+                android:fontFamily="@font/manrope_medium"
                 android:hint="@string/note_subtitle"
                 android:importantForAutofill="no"
                 android:includeFontPadding="false"
                 android:paddingTop="@dimen/_8sdp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/icon"
+                android:textColor="@color/black"
+                android:textColorHint="@color/icons"
                 android:textSize="@dimen/_13ssp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/viewSubtitleIndicator"
@@ -131,15 +145,15 @@
                 android:layout_marginEnd="@dimen/_12sdp"
                 android:layout_marginBottom="@dimen/_15sdp"
                 android:background="@null"
-                android:fontFamily="@font/ubuntu_regular"
+                android:fontFamily="@font/manrope_regular"
                 android:gravity="top"
                 android:hint="@string/type_note_here"
                 android:importantForAutofill="no"
                 android:includeFontPadding="false"
                 android:inputType="textMultiLine"
                 android:minHeight="@dimen/_100sdp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/icon"
+                android:textColor="@color/black"
+                android:textColorHint="@color/icons"
                 android:textSize="@dimen/_13ssp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/imgNote"
@@ -152,7 +166,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/scrollView"
-        android:layout_marginStart="25dp">
+        android:layout_marginStart="0dp">
         <include layout="@layout/misc"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import adapter.NotesAdapter;
+import com.example.project3.adapter.NotesAdapter;
 import db.DbHelper;
 import model.Notes;
 
@@ -26,17 +26,20 @@ public class MainActivity extends AppCompatActivity {
     NotesAdapter notesAdapter;
     ArrayList<Notes> notesArrayList;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        recyclerView= (RecyclerView) findViewById(R.id.rview);
 
 
         addButton=findViewById(R.id.imageAddNoteMain);
         searchButton=findViewById(R.id.searchIcon);
         searchText=findViewById(R.id.inputSearch);
 
-        recyclerView= (RecyclerView) findViewById(R.id.rview);
+
 
         notesAdapter = new NotesAdapter( this);
         dbHelper = new DbHelper(this);
@@ -49,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         );
 
+        recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(notesAdapter);
 
 //      When add button clicked
@@ -73,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                     dbHelper.getSearch(searchText.getText().toString());
                     String value = searchText.getText().toString();
                     int size = dbHelper.getSearch(searchText.getText().toString()).size();
-                    Toast.makeText(MainActivity.this,"succss "+size +" "+value,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this,"success "+size +" "+value,Toast.LENGTH_SHORT).show();
                 }catch (Exception e){
                     Toast.makeText(MainActivity.this,"error :"+e,Toast.LENGTH_SHORT).show();
                 }

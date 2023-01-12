@@ -8,19 +8,35 @@
     <color name="mainTheme">#292929</color>
     <color name="black">#292929</color>
     <color name="white">#FFFFFF</color>
-    <color name="search">#4C4C4C</color>
+    <color name="search1">#4C4C4C</color>
     <color name="noteMainTheme">#4C4C4C</color>
     <color name="miscBackground">#4C4C4C</color>
     <color name="noteTheme1">#229203</color>
     <color name="noteTheme2">#750A0A</color>
     <color name="noteTheme3">#0C80DA</color>
-    <color name="accent">#FDBE3B</color>
-    <color name="icons">#D1D0D0</color>
+    <color name="accent1">#FDBE3B</color>
+    <color name="icons1">#D1D0D0</color>
     <color name="actionButton">#2F2D2E</color>
-    <color name="textHint">#7B7B7B</color>
-    <color name="beige">#F4EEE1</color>
-    <color name="icon">#999999</color>
-    <color name="yellow">#FFEA66</color>
-    <color name="orng">#FFEA66</color>
+    <color name="whitee">#B3FFFFFF</color>
+    <color name="yellow">#ffd633</color>
+    <color name="blue">#4e33ff</color>
+    <color name="lightblack">#171c26</color>
+    <color name="primarydark">#171c26</color>
+    <color name="icons">#999999</color>
+    <color name="textHint">#CFCFCF</color>
+    <color name="search">#6A6A6A</color>
+    <color name="bg">#0E121A</color>
+    <color name="bg_2">#B3171C26</color>
+    <color name="addbg">#3269FE</color>
+    <color name="accent">#03DAC5</color>
+    <color name="bg_notes">#80171C26</color>
+    <color name="bgfab">#DFE0E1</color>
+    <color name="bgmis">#161C29</color>
+    <color name="bgmain">#FEFEFE</color>
+
+
+
+
+
 
 </resources>

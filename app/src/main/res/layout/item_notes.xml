@@ -3,8 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/mainTheme"
-    android:layout_marginTop="10dp">
+    android:background="@color/bg"
+    android:layout_marginTop="10dp"
+    android:layout_margin="5dp"
+    >
 
 
         <LinearLayout
@@ -12,15 +14,15 @@
             android:layout_height="match_parent"
             android:background="@drawable/background_note"
             android:id="@+id/cvNotes"
-            android:layout_margin="5dp"
+            android:layout_margin="0dp"
             android:orientation="vertical">
             <com.makeramen.roundedimageview.RoundedImageView
                 android:id="@+id/imageNoteItem"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                app:riv_corner_radius_top_left="@dimen/_10sdp"
-                app:riv_corner_radius_top_right="@dimen/_10sdp"
+                app:riv_corner_radius_top_left="10dp"
+                app:riv_corner_radius_top_right="10dp"
                 android:visibility="gone"/>
             <TextView
                 android:id="@+id/titleNote"
@@ -30,32 +32,33 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                android:fontFamily="@font/ubuntu_bold"
+                android:fontFamily="@font/manrope_bold"
                 android:includeFontPadding="false"
                 android:textSize="18sp" />
 
 
             <TextView
                 android:id="@+id/subtitleNote"
-                android:fontFamily="@font/ubuntu_medium"
+                android:fontFamily="@font/manrope_regular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="3dp"
                 android:layout_marginEnd="8dp"
                 android:includeFontPadding="false"
-                android:textColor="@color/white"
-                android:textSize="14sp"/>
+                android:textColor="@color/whitee"
+                android:textSize="12sp"/>
 
             <TextView
                 android:id="@+id/textDate"
-                android:fontFamily="@font/ubuntu_light"
+                android:fontFamily="@font/manrope_regular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+                android:layout_marginTop="2dp"
                 android:includeFontPadding="false"
                 android:textSize="10sp"
-                android:textColor="@color/white"/>
+                android:textColor="@color/whitee"/>
 
 
         </LinearLayout>
